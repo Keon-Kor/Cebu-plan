@@ -1,31 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CEBU DIVING 2026</title>
+    <title>CEBU DEEP DIVE 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; margin: 0; background: #001f3f; color: white; text-align: center; }
-        .hero { background: linear-gradient(to bottom, #0074D9, #001f3f); padding: 60px 20px; }
-        .plan { max-width: 500px; margin: 20px auto; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: left; }
-        h1 { font-size: 2em; margin: 0; }
-        .day { color: #7FDBFF; font-weight: bold; margin-top: 15px; }
+        :root { --primary-color: #00e5ff; --bg-color: #0a192f; --text-color: #e6f1ff; --card-bg: #112240; }
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; background-color: var(--bg-color); color: var(--text-color); padding-bottom: 50px; }
+        
+        /* Header & Hero */
+        header { 
+            background: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.9)), url('https://images.unsplash.com/photo-1582908613447-61612b9d3037?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover; background-position: center; text-align: center; padding: 80px 20px 40px; border-bottom: 3px solid var(--primary-color);
+        }
+        h1 { margin: 0; font-size: 2.8em; letter-spacing: 1px; text-transform: uppercase; color: var(--primary-color); text-shadow: 0 0 15px rgba(0,229,255,0.5); }
+        .subtitle { color: #8892b0; font-size: 1.1em; margin-top: 10px; }
+
+        /* Navigation Tabs */
+        .nav-container { overflow-x: auto; white-space: nowrap; background: #0a192f; padding: 15px 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.3); -webkit-overflow-scrolling: touch; }
+        .nav-tabs { display: inline-flex; gap: 10px; padding: 0 5px; }
+        .tab-btn { 
+            background: transparent; border: 2px solid var(--card-bg); color: #8892b0; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; font-size: 0.9em;
+        }
+        .tab-btn.active { background: var(--primary-color); color: var(--bg-color); border-color: var(--primary-color); box-shadow: 0 0 15px rgba(0,229,255,0.4); }
+
+        /* Content Sections */
+        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .day-card { background: var(--card-bg); padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 20px; border-left: 4px solid var(--primary-color); }
+        .day-header { font-size: 1.5em; font-weight: 700; color: var(--primary-color); margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .day-date { font-size: 0.7em; color: #8892b0; font-weight: normal; }
+        
+        /* Timeline Items */
+        .timeline-item { display: flex; align-items: flex-start; margin-bottom: 20px; position: relative; }
+        .timeline-time { min-width: 60px; font-weight: bold; color: var(--primary-color); font-size: 0.9em; padding-top: 3px; }
+        .timeline-content { flex-grow: 1; padding-left: 15px; border-left: 2px solid #233554; padding-bottom: 10px; }
+        .timeline-title { font-size: 1.1em; font-weight: bold; margin-bottom: 5px; color: white; }
+        .timeline-desc { font-size: 0.95em; color: #a8b2d1; line-height: 1.5; }
+        
+        /* Map Button */
+        .map-btn {
+            display: inline-block; margin-top: 8px; padding: 6px 12px; background: rgba(0,229,255,0.15); color: var(--primary-color); text-decoration: none; border-radius: 8px; font-size: 0.85em; font-weight: bold; transition: background 0.3s;
+        }
+        .map-btn:hover { background: rgba(0,229,255,0.3); }
+
+        footer { text-align: center; padding: 30px; color: #8892b0; font-size: 0.8em; margin-top: 40px; border-top: 1px solid var(--card-bg); }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>CEBU DIVING 🌊</h1>
-        <p>2026.02.12 - 02.17</p>
+
+<header>
+    <h1>CEBU SCUBA 2026</h1>
+    <div class="subtitle">2026.02.12 - 02.17 | The Ultimate Dive & Vibe</div>
+</header>
+
+<div class="nav-container">
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'day1')">DAY 1 (출국)</button>
+        <button class="tab-btn" onclick="openTab(event, 'day2')">DAY 2 (다이빙 시작)</button>
+        <button class="tab-btn" onclick="openTab(event, 'day3')">DAY 3 (수중 탐험)</button>
+        <button class="tab-btn" onclick="openTab(event, 'day4')">DAY 4 (시티 이동)</button>
+        <button class="tab-btn" onclick="openTab(event, 'day5')">DAY 5 (재즈 나잇)</button>
+        <button class="tab-btn" onclick="openTab(event, 'day6')">DAY 6 (귀국)</button>
     </div>
-    <div class="plan">
-        <div class="day">DAY 1-3. Scuba Focus</div>
-        <p>빅보스 다이빙 & 숙소 체크인</p>
-        <div class="day">DAY 4-5. City & Night</div>
-        <p>Yello Hotel, Straight Up Bar, Slabadu Jazz Bar</p>
-        <div class="day">DAY 6. Back Home</div>
-        <p>인천공항 귀국 (07:05)</p>
+</div>
+
+<div class="container">
+    <div id="day1" class="tab-content active">
+        <div class="day-card">
+            <div class="day-header">Departure <span class="day-date">2/12 (목)</span></div>
+            <div class="timeline-item">
+                <div class="timeline-time">20:20</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">인천공항 이륙 ✈️</div>
+                    <div class="timeline-desc">제주항공 7C2113편 탑승. 세부로 출발!</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=인천국제공항" target="_blank" class="map-btn">🗺️ 공항 위치 보기</a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div id="day2" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">Dive Day 1 <span class="day-date">2/13 (금)</span></div>
+             <div class="timeline-item">
+                <div class="timeline-time">00:10</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">막탄 세부 공항 도착</div>
+                    <div class="timeline-desc">입국 수속 후 픽업 차량 탑승</div>
+                </div>
+            </div>
+             <div class="timeline-item">
+                <div class="timeline-time">01:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">빅보스 다이빙 샵 체크인</div>
+                    <div class="timeline-desc">숙소 배정 및 휴식 (내일 다이빙을 위해 충전!)</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Big+Boss+Dive+Center+Mactan+Cebu" target="_blank" class="map-btn">🗺️ 샵 위치 보기</a>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">AM</div>
+                <div class="timeline-content">
+                    <div class="timeline-title" style="color:var(--primary-color)">🤿 첫 번째 다이빙 세션</div>
+                    <div class="timeline-desc">체크 다이빙 및 오전 펀 다이빙 진행</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">PM</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">샵 저녁 식사 및 자유시간</div>
+                    <div class="timeline-desc">다이버들과 교류 및 마사지 등 자유 일정</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="day3" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">Deep Blue Explorer <span class="day-date">2/14 (토)</span></div>
+            <div class="timeline-item">
+                <div class="timeline-time">All Day</div>
+                <div class="timeline-content">
+                    <div class="timeline-title" style="color:var(--primary-color)">🤿 전일 다이빙 투어</div>
+                    <div class="timeline-desc">세부의 주요 포인트 탐험 (날씨에 따라 포인트 결정)</div>
+                </div>
+            </div>
+             <div class="timeline-item">
+                <div class="timeline-time">Evening</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">불토 자유 일정</div>
+                    <div class="timeline-desc">샵 근처 로컬 맛집 탐방 추천</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="day4" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">City Vibes & Nightlife <span class="day-date">2/15 (일)</span></div>
+            <div class="timeline-item">
+                <div class="timeline-time">AM</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">마지막 오전 다이빙</div>
+                    <div class="timeline-desc">아쉬움을 달래는 마지막 입수 후 장비 정리</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">14:00</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Yello Hotel Cebu 체크인</div>
+                    <div class="timeline-desc">시티로 이동하여 호텔 체크인 및 환복</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Yello+Hotel+Cebu" target="_blank" class="map-btn">🗺️ 호텔 지도 보기</a>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time" style="color:#ff6b6b">NIGHT</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">🔥 세부의 밤을 즐겨라</div>
+                    <div class="timeline-desc" style="margin-bottom: 10px;">
+                        <strong>1차: Straight Up Bar</strong> (루프탑 분위기)<br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Seda+IT+Park+Cebu+Straight+Up+Bar" target="_blank" class="map-btn">🗺️ 지도</a>
+                    </div>
+                    <div class="timeline-desc">
+                        <strong>2차: Cubana Cebu</strong> (라이브 음악 & 칵테일)<br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Cubana+Cebu" target="_blank" class="map-btn">🗺️ 지도</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="day5" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">Relax & Jazz <span class="day-date">2/16 (월)</span></div>
+             <div class="timeline-item">
+                <div class="timeline-time">AM</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">여유로운 브런치</div>
+                    <div class="timeline-desc">Abaca Baking Company에서 커피와 브런치</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Abaca+Baking+Company+IT+Park" target="_blank" class="map-btn">🗺️ 위치 보기</a>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">12:00</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">체크아웃 & 시티 산책</div>
+                    <div class="timeline-desc">짐 맡기고 마지막 쇼핑이나 마사지</div>
+                </div>
+            </div>
+             <div class="timeline-item">
+                <div class="timeline-time" style="color:#ff6b6b">NIGHT</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">🎷 Slabadu Jazz Bar</div>
+                    <div class="timeline-desc">여행의 마지막을 장식하는 재즈 라이브 공연 감상</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Slabadu+Cafe+and+Bistro+Cebu" target="_blank" class="map-btn">🗺️ 재즈바 위치</a>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">23:00</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">공항으로 이동</div>
+                    <div class="timeline-desc">안녕, 세부! 출국 수속 시작 (01:20 비행기)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="day6" class="tab-content">
+        <div class="day-card">
+            <div class="day-header">Back Home <span class="day-date">2/17 (화)</span></div>
+            <div class="timeline-item">
+                <div class="timeline-time">07:05</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">인천공항 도착</div>
+                    <div class="timeline-desc">현실 복귀 완료. 다음 다이빙을 기약하며!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 GUNHEE'S DIVING LOG. Built for speed.
+</footer>
+
+<script>
+    function openTab(evt, dayName) {
+        var i, tabcontent, tablinks;
+        // 모든 탭 내용 숨기기
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
+        // 모든 버튼 비활성화 상태로 만들기
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        // 선택된 탭 내용 보여주기 및 버튼 활성화
+        document.getElementById(dayName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
 </body>
 </html>
-
-
