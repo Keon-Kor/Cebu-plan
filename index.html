@@ -3,104 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUNHEE'S CEBU LOG</title>
+    <title>CEBU SCUBA TOUR 2026</title>
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <style>
         body{margin:0;font-family:'Pretendard',sans-serif;background:#F5F7FA;color:#333;padding-bottom:80px;line-height:1.5}
-        header{background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=800&q=80');background-size:cover;height:260px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#fff}
-        h1{margin:0;font-size:28px;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
-        .sub{opacity:0.9;font-weight:600;font-size:14px;margin-bottom:4px}
         
+        /* 헤더: 세부 바다 사진 */
+        header{background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1544551763-47a0159f963f?w=800&q=80');background-size:cover;height:240px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#fff}
+        h1{margin:0;font-size:26px;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,0.3);line-height:1.2}
+        .sub{opacity:0.9;font-weight:600;font-size:14px;margin-bottom:8px}
+
         /* 탭 네비게이션 */
-        .nav{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(5px);padding:12px 16px;white-space:nowrap;overflow-x:auto;box-shadow:0 2px 10px rgba(0,0,0,0.05);z-index:99;display:flex;gap:8px}
+        .nav{position:sticky;top:0;background:rgba(255,255,255,0.98);border-bottom:1px solid #eee;padding:12px 16px;white-space:nowrap;overflow-x:auto;z-index:99;display:flex;gap:8px}
         .nav::-webkit-scrollbar{display:none}
-        .nav btn{background:#eee;border:0;padding:8px 18px;border-radius:20px;font-weight:700;color:#888;font-size:14px;transition:0.2s}
-        .nav btn.active{background:#0066CC;color:#fff;box-shadow:0 4px 10px rgba(0,102,204,0.3)}
-        
-        /* 페이지 내용 */
-        .page{display:none;padding:20px;animation:up 0.4s ease-out}
+        .nav button{background:#f1f3f5;border:0;padding:8px 16px;border-radius:20px;font-weight:700;color:#868e96;font-size:14px;transition:0.2s}
+        .nav button.active{background:#228be6;color:#fff;box-shadow:0 4px 12px rgba(34,139,230,0.3)}
+
+        /* 페이지 영역 */
+        .page{display:none;padding:20px;animation:up 0.3s ease-out}
         .page.active{display:block}
+
+        /* 일정 카드 */
+        .card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.04);margin-bottom:20px;border:1px solid #e9ecef}
+        .info{padding:20px}
         
-        /* 카드 스타일 */
-        .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);margin-bottom:24px;border:1px solid #eee}
-        .info{padding:22px}
-        .badge{display:inline-block;background:#E3F2FD;color:#0066CC;font-weight:800;font-size:12px;padding:4px 8px;border-radius:6px;margin-bottom:10px}
-        .badge.night{background:#1A237E;color:#fff}
-        .badge.tip{background:#FFF3E0;color:#F57C00}
-        
-        h3{margin:0 0 6px;font-size:19px;letter-spacing:-0.5px}
-        p{margin:0;color:#555;font-size:15px;line-height:1.6}
-        .detail{margin-top:12px;padding-top:12px;border-top:1px dashed #eee;font-size:13px;color:#777}
-        .detail strong{color:#333;font-weight:700}
-        
-        /* 지도 프레임 */
-        iframe{width:100%;height:200px;border:0;display:block;background:#eee}
-        
-        @keyframes up{from{transform:translateY(15px);opacity:0}to{transform:translateY(0);opacity:1}}
+        /* 시간 뱃지 */
+        .badge{display:inline-block;background:#e7f5ff;color:#1971c2;font-weight:800;font-size:12px;padding:4px 8px;border-radius:6px;margin-bottom:8px}
+        .badge.flight{background:#fff0f6;color:#c02942}
+        .badge.dive{background:#e3fafc;color:#0c8599}
+        .badge.night{background:#f3f0ff;color:#5f3dc4}
+
+        h3{margin:0 0 6px;font-size:18px;font-weight:700;color:#212529}
+        p{margin:0;color:#495057;font-size:15px;line-height:1.5}
+        .desc{margin-top:8px;font-size:13px;color:#868e96;border-top:1px dashed #dee2e6;padding-top:8px}
+
+        /* 지도 임베드 (iframe) */
+        iframe{width:100%;height:200px;border:0;display:block;background:#f8f9fa}
+
+        @keyframes up{from{transform:translateY(10px);opacity:0}to{transform:translateY(0);opacity:1}}
     </style>
 </head>
 <body>
 
 <header>
-    <div class="sub">2026.02.12 - 02.17</div>
-    <h1>CEBU DIVING<br>& CITY VIBE 🌊</h1>
+    <div class="sub">2026.02.12(목) - 02.17(화)</div>
+    <h1>세부 스쿠버다이빙 투어<br>(Big Boss & City)</h1>
 </header>
 
 <div class="nav">
-    <btn onclick="go('d1',this)" class="active">Day 1</btn>
-    <btn onclick="go('d2',this)">Day 2</btn>
-    <btn onclick="go('d3',this)">Day 3</btn>
-    <btn onclick="go('d4',this)">Day 4</btn>
-    <btn onclick="go('d5',this)">Day 5</btn>
-    <btn onclick="go('d6',this)">Day 6</btn>
+    <button onclick="openTab('d1',this)" class="active">Day 1</button>
+    <button onclick="openTab('d2',this)">Day 2</button>
+    <button onclick="openTab('d3',this)">Day 3</button>
+    <button onclick="openTab('d4',this)">Day 4</button>
+    <button onclick="openTab('d5',this)">Day 5</button>
+    <button onclick="openTab('d6',this)">Day 6</button>
 </div>
 
 <div id="d1" class="page active">
     <div class="card">
         <div class="info">
-            <span class="badge">20:20</span>
-            <h3>인천공항 출발 ✈️</h3>
-            <p>제주항공 7C2113편. 설레는 여행의 시작!</p>
-            <div class="detail">
-                <strong>💡 Check:</strong> 여권, 다이빙 컴퓨터, 로그북 챙겼는지 확인.
-            </div>
+            <span class="badge flight">20:20</span>
+            <h3>인천공항(ICN) 출발 ✈️</h3>
+            <p>제주항공 7C2113</p>
+            <div class="desc">퇴근 후 바로 공항 이동 / 여권 확인</div>
         </div>
-    </div>
-    <div class="card">
-        <div class="info">
-            <span class="badge">00:10 (+1)</span>
-            <h3>막탄 세부 국제공항 도착</h3>
-            <p>입국 심사 후 픽업 차량으로 다이빙 샵 이동.</p>
-        </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62828.606275215745!2d123.95768598687707!3d10.312948754546452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9976f95555555%3A0x60467576fa19b02!2z66eJ7YOELeyZgO2FjCDqta3usZjqtaztVrQ!5e0!3m2!1sko!2skr!4v1707300000000!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </div>
 
 <div id="d2" class="page">
     <div class="card">
         <div class="info">
-            <span class="badge">DIVING DAY 1</span>
-            <h3>빅보스 다이빙 샵 🤿</h3>
-            <p>본격적인 수중 탐험의 시작. 체크 다이빙 후 펀 다이빙 진행.</p>
-            <div class="detail">
-                <strong>🍽 Lunch:</strong> 샵에서 제공하는 한식 도시락<br>
-                <strong>💤 Evening:</strong> 다이빙 후 마사지 & 휴식
-            </div>
+            <span class="badge flight">00:10</span>
+            <h3>세부 막탄 공항 도착</h3>
+            <p>입국 수속 후 픽업 차량 탑승</p>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.327572352844!2d124.008!3d10.315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDE4JzU0LjAiTiAxMjTCsDAwJzI4LjgiRQ!5e0!3m2!1sko!2skr!4v1707300000000!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="card">
+        <div class="info">
+            <span class="badge dive">Check-in</span>
+            <h3>빅보스 다이빙 샵 (숙소)</h3>
+            <p>체크인 후 휴식 & 오전 다이빙 준비</p>
+        </div>
+        <iframe src="https://maps.google.com/maps?q=Big+Boss+Dive+Resort+Cebu&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+    <div class="card">
+        <div class="info">
+            <span class="badge dive">AM / PM</span>
+            <h3>다이빙 1일차 🤿</h3>
+            <p>오전/오후 다이빙 진행</p>
+            <div class="desc">저녁: 샵 식사 후 자유시간</div>
+        </div>
     </div>
 </div>
 
 <div id="d3" class="page">
     <div class="card">
         <div class="info">
-            <span class="badge">DEEP BLUE</span>
-            <h3>보트 다이빙 투어 🚤</h3>
-            <p>방카를 타고 나가는 전일 다이빙. 날루수안 or 힐루뚱안 포인트 예상.</p>
-            <div class="detail">
-                <strong>🐠 Point:</strong> 거북이와 잭피쉬 떼를 볼 수 있는 포인트.<br>
-                <strong>💡 Tip:</strong> 선크림은 산호 보호 제품으로!
-            </div>
+            <span class="badge dive">All Day</span>
+            <h3>다이빙 2일차 🐠</h3>
+            <p>전일 다이빙 일정</p>
+            <div class="desc">저녁: 샵 식사 후 자유시간 (마사지 등)</div>
         </div>
     </div>
 </div>
@@ -108,57 +110,67 @@
 <div id="d4" class="page">
     <div class="card">
         <div class="info">
+            <span class="badge dive">AM</span>
+            <h3>다이빙 3일차 (오전)</h3>
+            <p>마지막 다이빙 후 장비 정리</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="info">
             <span class="badge">14:00</span>
-            <h3>Yello Hotel Cebu 🏨</h3>
-            <p>다이빙 일정 종료 후 시티로 이동. 깔끔하고 힙한 디자인 호텔.</p>
+            <h3>빅보스 체크아웃 -> 시티 이동</h3>
+            <p>Yello Hotel Cebu 체크인</p>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.132626993132!2d123.895!3d10.331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a99924c2c0c73d%3A0x7d0663730e700a0d!2sYello%20Hotel!5e0!3m2!1sko!2skr!4v1707300000000!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://maps.google.com/maps?q=Yello+Hotel+Cebu&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
     </div>
     <div class="card">
         <div class="info">
-            <span class="badge night">NIGHT OUT</span>
-            <h3>Straight Up Bar (Seda) 🍸</h3>
-            <p>세부 시티의 야경이 한눈에 보이는 루프탑 바.</p>
-            <div class="detail">
-                <strong>✨ Vibe:</strong> 고급스럽고 모던함. 인생샷 필수.
-            </div>
+            <span class="badge night">Night 1</span>
+            <h3>Straight Up Bar 🍸</h3>
+            <p>Seda Hotel 루프탑 바</p>
         </div>
+        <iframe src="https://maps.google.com/maps?q=Seda+Central+Bloc+Cebu&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
     </div>
     <div class="card">
         <div class="info">
-            <span class="badge night">2nd ROUND</span>
+            <span class="badge night">Night 2</span>
             <h3>Cubana Cebu 🔥</h3>
-            <p>라이브 음악과 맛있는 피자가 있는 활기찬 펍.</p>
+            <p>라이브 바 & 펍</p>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.394!2d123.896!3d10.312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9994c65757d9d%3A0x1c3bb9924372990!2sCubana!5e0!3m2!1sko!2skr!4v1707300000000!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://maps.google.com/maps?q=Cubana+Cebu&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
     </div>
 </div>
 
 <div id="d5" class="page">
     <div class="card">
         <div class="info">
-            <span class="badge tip">BRUNCH</span>
+            <span class="badge">Brunch</span>
             <h3>Abaca Baking Company 🥐</h3>
-            <p>세부 최고의 베이커리. 에그 베네딕트 추천.</p>
+            <p>아바카 베이킹 컴퍼니 조식/브런치</p>
+            <div class="desc">식사 후 산책</div>
+        </div>
+        <iframe src="https://maps.google.com/maps?q=Abaca+Baking+Company+Cebu&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+    <div class="card">
+        <div class="info">
+            <span class="badge">12:00</span>
+            <h3>호텔 체크아웃</h3>
+            <p>짐 맡기고 자유시간 / 점심식사</p>
         </div>
     </div>
     <div class="card">
         <div class="info">
-            <span class="badge night">GRAND FINALE</span>
+            <span class="badge night">Jazz Night</span>
             <h3>Slabadu Jazz Bar 🎷</h3>
-            <p>여행의 마지막 밤을 장식할 고퀄리티 라이브 재즈 공연.</p>
-            <div class="detail">
-                <strong>🕒 Time:</strong> 공연 시작 시간에 맞춰 방문 추천.<br>
-                <strong>🍷 Drink:</strong> 와인이나 위스키 한 잔의 여유.
-            </div>
+            <p>슬라바두 재즈바 공연 관람</p>
         </div>
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.0!2d123.918!3d10.34!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIwJzEwLjAiTiAxMjPCsDU1JzEwLjAiRQ!5e0!3m2!1sko!2skr!4v1707300000000!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://maps.google.com/maps?q=Slabadu+Cafe+Bistro&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
     </div>
     <div class="card">
         <div class="info">
-            <span class="badge">23:00</span>
-            <h3>공항으로 이동</h3>
-            <p>모든 일정을 마치고 공항으로 이동. (01:20 비행기)</p>
+            <span class="badge flight">23:00</span>
+            <h3>공항 이동</h3>
+            <p>출국 수속 (01:20 비행기)</p>
         </div>
     </div>
 </div>
@@ -166,18 +178,18 @@
 <div id="d6" class="page">
     <div class="card">
         <div class="info">
-            <span class="badge">07:05</span>
-            <h3>인천 도착 🇰🇷</h3>
-            <p>현실 복귀 완료. 다음 다이빙을 기약하며!</p>
+            <span class="badge flight">07:05</span>
+            <h3>인천공항 도착 🇰🇷</h3>
+            <p>여행 종료, 귀가</p>
         </div>
     </div>
 </div>
 
 <script>
-function go(id,btn){
+function openTab(id,btn){
     document.querySelectorAll('.page').forEach(e=>e.classList.remove('active'));
     document.getElementById(id).classList.add('active');
-    document.querySelectorAll('btn').forEach(e=>e.classList.remove('active'));
+    document.querySelectorAll('.nav button').forEach(e=>e.classList.remove('active'));
     btn.classList.add('active');
     window.scrollTo(0,0);
 }
