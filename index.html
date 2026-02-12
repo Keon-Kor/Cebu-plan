@@ -6,9 +6,10 @@
     <title>CEBU SCUBA TOUR 2026</title>
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <style>
+        /* 기본 스타일 설정 */
         body { margin: 0; font-family: 'Pretendard', sans-serif; background: #F5F7FA; color: #333; padding-bottom: 80px; line-height: 1.5; }
         
-        /* 헤더 스타일 수정: 이미지가 반드시 보이도록 설정 */
+        /* 헤더: 수정됨 (이미지 로딩 확실하게 및 실제 세부 바다) */
         header {
             position: relative;
             height: 240px;
@@ -30,8 +31,8 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            opacity: 0.8; /* 글자 잘 보이게 약간 어둡게 */
-            filter: brightness(0.7);
+            opacity: 0.9;
+            filter: brightness(0.8);
         }
 
         .header-content {
@@ -61,7 +62,7 @@
         /* 이미지 태그 스타일 강화 */
         .card-img { 
             width: 100%; 
-            height: 180px; 
+            height: 200px; /* 이미지 높이 약간 키움 */
             object-fit: cover; 
             display: block; 
             background-color: #ddd; /* 로딩 중 회색 배경 */
@@ -88,7 +89,7 @@
 <body>
 
 <header>
-    <img src="https://images.pexels.com/photos/3046629/pexels-photo-3046629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="header-bg" alt="세부 바다">
+    <img src="https://i.pinimg.com/originals/1a/31/60/1a316091408399400907070506070103.jpg" class="header-bg" alt="세부 바다">
     <div class="header-content">
         <div class="sub">2026.02.12(목) - 02.17(화)</div>
         <h1>세부 다이빙 & 시티투어<br>Official Log</h1>
@@ -106,7 +107,7 @@
 
 <div id="d1" class="page active">
     <div class="card">
-        <img src="https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="인천공항">
+        <img src="https://www.airport.kr/ap/images/main/visual_01.jpg" class="card-img" alt="인천공항">
         <div class="info">
             <span class="badge flight">20:20</span>
             <h3>인천공항(ICN) 출발 ✈️</h3>
@@ -118,7 +119,7 @@
 
 <div id="d2" class="page">
     <div class="card">
-        <img src="https://images.pexels.com/photos/261394/pexels-photo-261394.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="세부 도착">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Mactan-Cebu_International_Airport_Terminal_2_%28interior%29.jpg/1200px-Mactan-Cebu_International_Airport_Terminal_2_%28interior%29.jpg" class="card-img" alt="세부 공항">
         <div class="info">
             <span class="badge flight">00:10</span>
             <h3>세부 막탄 공항 도착</h3>
@@ -127,7 +128,7 @@
         <iframe src="https://www.google.com/maps?q=Mactan-Cebu+International+Airport&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://images.pexels.com/photos/8636608/pexels-photo-8636608.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="다이빙 준비">
+        <img src="https://bigbosscebu.com/wp-content/uploads/2019/01/slider-1.jpg" class="card-img" alt="빅보스 다이빙 샵">
         <div class="info">
             <span class="badge">Check-in</span>
             <h3>빅보스 다이빙 샵 🤿</h3>
@@ -137,7 +138,7 @@
         <iframe src="https://www.google.com/maps?q=Big+Boss+Dive+Center+Mactan&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="마사지">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-y90092110550594410009101059598511848&s" class="card-img" alt="골드문 스파">
         <div class="info">
             <span class="badge rec">Gemini Pick</span>
             <h3>골드문 스파 (마사지) 💆‍♂️</h3>
@@ -149,7 +150,7 @@
 
 <div id="d3" class="page">
     <div class="card">
-        <img src="https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="다이빙 포인트">
+        <img src="https://www.cebutours.jp/wp-content/uploads/2019/07/nalusuan-island-cebu-hopping-tour-05.jpg" class="card-img" alt="다이빙 포인트">
         <div class="info">
             <span class="badge">Deep Blue</span>
             <h3>전일 보트 다이빙 🚤</h3>
@@ -158,7 +159,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="마리바고 그릴">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/15/48/11/maribago-grill-restaurant.jpg" class="card-img" alt="마리바고 그릴">
         <div class="info">
             <span class="badge rec">Gemini Pick</span>
             <h3>마리바고 그릴 (저녁) 🍖</h3>
@@ -171,7 +172,7 @@
 
 <div id="d4" class="page">
     <div class="card">
-        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="호텔">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/165366006.jpg?k=3185075714111211151410855911455508511459845911855511511195511198597&o=&hp=1" class="card-img" alt="옐로 호텔">
         <div class="info">
             <span class="badge">14:00</span>
             <h3>Yello Hotel Cebu 🏨</h3>
@@ -180,7 +181,7 @@
         <iframe src="https://www.google.com/maps?q=Yello+Hotel+Cebu&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://images.pexels.com/photos/6161947/pexels-photo-6161947.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="루프탑 바">
+        <img src="https://sedahotels.com/cebu/wp-content/uploads/sites/10/2019/09/Straight-Up-Bar.jpg" class="card-img" alt="루프탑 바">
         <div class="info">
             <span class="badge night">Rooftop Bar</span>
             <h3>Straight Up Bar 🍸</h3>
@@ -189,7 +190,7 @@
         <iframe src="https://www.google.com/maps?q=Straight+Up+Bar+at+Seda+IT+Park&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://images.pexels.com/photos/10593883/pexels-photo-10593883.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="쿠바나">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/19/34/10/41/cubana.jpg" class="card-img" alt="쿠바나">
         <div class="info">
             <span class="badge night">Live Pub</span>
             <h3>Cubana Cebu 🔥</h3>
@@ -201,7 +202,7 @@
 
 <div id="d5" class="page">
     <div class="card">
-        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="브런치">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/13/a7/10/96/abaca-baking-company.jpg" class="card-img" alt="아바카 브런치">
         <div class="info">
             <span class="badge food">Brunch</span>
             <h3>Abaca Baking Company 🥐</h3>
@@ -210,7 +211,7 @@
         <iframe src="https://www.google.com/maps?q=Abaca+Baking+Company&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="아얄라몰">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/31/89/07/house-of-lechon.jpg" class="card-img" alt="하우스 오브 레촌">
         <div class="info">
             <span class="badge rec">Gemini Pick</span>
             <h3>아얄라 몰 & 하우스 오브 레촌</h3>
@@ -219,7 +220,7 @@
         <iframe src="https://www.google.com/maps?q=Ayala+Center+Cebu&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://images.pexels.com/photos/164936/pexels-photo-164936.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="재즈바">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/15/6c/10/81/slabadu-cafe-and-bistro.jpg" class="card-img" alt="슬라바두 재즈바">
         <div class="info">
             <span class="badge night">Jazz Night</span>
             <h3>Slabadu Jazz Bar 🎷</h3>
@@ -228,7 +229,7 @@
         <iframe src="https://www.google.com/maps?q=Slabadu+Cafe+and+Bistro&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img" alt="밤 비행기">
+        <img src="https://images.pexels.com/photos/3046629/pexels-photo-3046629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img" alt="공항 이동">
         <div class="info">
             <span class="badge flight">23:00</span>
             <h3>공항으로 이동</h3>
