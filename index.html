@@ -8,7 +8,7 @@
     <style>
         body { margin: 0; font-family: 'Pretendard', sans-serif; background: #F5F7FA; color: #333; padding-bottom: 80px; line-height: 1.5; }
         
-        /* 헤더 설정 */
+        /* 헤더 스타일: 이미지 로딩 확실한 방식 */
         header {
             position: relative;
             height: 240px;
@@ -18,10 +18,9 @@
             padding: 24px;
             color: #fff;
             background-color: #0066CC;
-            overflow: hidden;
         }
 
-        /* 배경 이미지: 위키미디어 공식 링크 (차단 없음) */
+        /* 배경 이미지: 아까 잘 나왔던 Unsplash 방식 그대로 적용 */
         .header-bg {
             position: absolute;
             top: 0;
@@ -30,19 +29,15 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            filter: brightness(0.7); /* 글자 잘 보이게 어둡게 */
+            filter: brightness(0.7);
         }
 
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
+        .header-content { position: relative; z-index: 1; }
 
         h1 { margin: 0; font-size: 26px; font-weight: 800; text-shadow: 0 2px 10px rgba(0,0,0,0.5); line-height: 1.2; }
         .sub { opacity: 0.95; font-weight: 600; font-size: 14px; margin-bottom: 8px; color: #fff; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
 
-        /* 탭 네비게이션 */
-        .nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eee; padding: 10px 10px; white-space: nowrap; overflow-x: auto; z-index: 99; display: flex; gap: 6px; }
+        .nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid #eee; padding: 10px; white-space: nowrap; overflow-x: auto; z-index: 99; display: flex; gap: 6px; }
         .nav::-webkit-scrollbar { display: none; }
         .nav button { background: #f1f3f5; border: 0; padding: 8px 14px; border-radius: 12px; color: #868e96; transition: 0.2s; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 75px; }
         .nav button .day-num { font-size: 13px; font-weight: 800; display: block; margin-bottom: 2px; }
@@ -50,22 +45,11 @@
         .nav button.active { background: #228be6; color: #fff; box-shadow: 0 4px 12px rgba(34,139,230,0.3); }
         .nav button.active .date-txt { opacity: 1; }
 
-        /* 컨텐츠 */
         .page { display: none; padding: 20px; animation: up 0.3s ease-out; }
         .page.active { display: block; }
 
-        /* 카드 및 이미지 */
         .card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.04); margin-bottom: 20px; border: 1px solid #e9ecef; }
-        
-        /* 이미지 태그 */
-        .card-img { 
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
-            display: block; 
-            background-color: #eee; 
-        }
-        
+        .card-img { width: 100%; height: 200px; object-fit: cover; display: block; background-color: #eee; }
         .info { padding: 16px 20px 20px; }
         
         .badge { display: inline-block; background: #e7f5ff; color: #1864ab; font-weight: 800; font-size: 12px; padding: 4px 8px; border-radius: 6px; margin-bottom: 8px; }
@@ -86,7 +70,7 @@
 <body>
 
 <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Bantayan_Island_beach.jpg" class="header-bg" alt="세부 바다">
+    <img src="https://images.unsplash.com/photo-1544551763-47a0159f963f?w=800&q=80" class="header-bg" alt="세부 바다">
     <div class="header-content">
         <div class="sub">2026.02.12(목) - 02.17(화)</div>
         <h1>세부 다이빙 & 시티투어<br>Official Log</h1>
@@ -104,7 +88,7 @@
 
 <div id="d1" class="page active">
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Incheon_International_Airport_Terminal_1_Center.jpg" class="card-img" alt="인천공항">
+        <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=800&q=80" class="card-img" alt="인천공항">
         <div class="info">
             <span class="badge flight">20:20</span>
             <h3>인천공항(ICN) 출발 ✈️</h3>
@@ -116,7 +100,7 @@
 
 <div id="d2" class="page">
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mactan-Cebu_International_Airport_Terminal_2.jpg" class="card-img" alt="세부 공항">
+        <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=800&q=80" class="card-img" alt="세부 공항">
         <div class="info">
             <span class="badge flight">00:10</span>
             <h3>세부 막탄 공항 도착</h3>
@@ -125,7 +109,7 @@
         <iframe src="https://www.google.com/maps?q=Mactan-Cebu+International+Airport&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Moalboal_Cebu_Philippines_Dive-centers-at-Panagsama-Beach_02.jpg" class="card-img" alt="다이빙 방카">
+        <img src="https://images.unsplash.com/photo-1582908613447-61612b9d3037?w=800&q=80" class="card-img" alt="다이빙 샵">
         <div class="info">
             <span class="badge">Check-in</span>
             <h3>빅보스 다이빙 샵 🤿</h3>
@@ -135,7 +119,7 @@
         <iframe src="https://www.google.com/maps?q=Big+Boss+Dive+Center+Mactan&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Massage-ap.jpg" class="card-img" alt="마사지">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" class="card-img" alt="골드문 스파">
         <div class="info">
             <span class="badge rec">Gemini Pick</span>
             <h3>골드문 스파 (마사지) 💆‍♂️</h3>
@@ -147,7 +131,7 @@
 
 <div id="d3" class="page">
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Coral_reef_in_Nalusuan_Island.jpg" class="card-img" alt="다이빙 포인트">
+        <img src="https://images.unsplash.com/photo-1516684669134-de6d7c47743b?w=800&q=80" class="card-img" alt="다이빙 포인트">
         <div class="info">
             <span class="badge">Deep Blue</span>
             <h3>전일 보트 다이빙 🚤</h3>
@@ -156,7 +140,7 @@
         </div>
     </div>
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Filipino_Cuisine.jpg" class="card-img" alt="마리바고 그릴">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" class="card-img" alt="마리바고 그릴">
         <div class="info">
             <span class="badge rec">Gemini Pick</span>
             <h3>마리바고 그릴 (저녁) 🍖</h3>
@@ -169,7 +153,7 @@
 
 <div id="d4" class="page">
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Cebu_City_Skyline.jpg" class="card-img" alt="세부 시티">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" class="card-img" alt="옐로 호텔">
         <div class="info">
             <span class="badge">14:00</span>
             <h3>Yello Hotel Cebu 🏨</h3>
@@ -178,7 +162,7 @@
         <iframe src="https://www.google.com/maps?q=Yello+Hotel+Cebu&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Sky_Bar_at_night.jpg" class="card-img" alt="루프탑 바">
+        <img src="https://images.unsplash.com/photo-1519671482502-9759101d4561?w=800&q=80" class="card-img" alt="루프탑 바">
         <div class="info">
             <span class="badge night">Rooftop Bar</span>
             <h3>Straight Up Bar 🍸</h3>
@@ -187,7 +171,7 @@
         <iframe src="https://www.google.com/maps?q=Straight+Up+Bar+at+Seda+IT+Park&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Bar_interior.jpg" class="card-img" alt="쿠바나">
+        <img src="https://images.unsplash.com/photo-1574155376612-bfa06e93f397?w=800&q=80" class="card-img" alt="쿠바나">
         <div class="info">
             <span class="badge night">Live Pub</span>
             <h3>Cubana Cebu 🔥</h3>
@@ -199,7 +183,7 @@
 
 <div id="d5" class="page">
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Eggs_Benedict-01-cropped.jpg" class="card-img" alt="브런치">
+        <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=800&q=80" class="card-img" alt="브런치">
         <div class="info">
             <span class="badge food">Brunch</span>
             <h3>Abaca Baking Company 🥐</h3>
@@ -208,7 +192,7 @@
         <iframe src="https://www.google.com/maps?q=Abaca+Baking+Company&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Lechon_Cebu.jpg" class="card-img" alt="레촌">
+        <img src="https://images.unsplash.com/photo-1606890819700-a0c140377186?w=800&q=80" class="card-img" alt="레촌">
         <div class="info">
             <span class="badge rec">Gemini Pick</span>
             <h3>아얄라 몰 & 하우스 오브 레촌</h3>
@@ -217,7 +201,7 @@
         <iframe src="https://www.google.com/maps?q=Ayala+Center+Cebu&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Jazz_Club_Etoile.jpg" class="card-img" alt="재즈바">
+        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80" class="card-img" alt="재즈바">
         <div class="info">
             <span class="badge night">Jazz Night</span>
             <h3>Slabadu Jazz Bar 🎷</h3>
@@ -226,7 +210,7 @@
         <iframe src="https://www.google.com/maps?q=Slabadu+Cafe+and+Bistro&output=embed"></iframe>
     </div>
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Mactan-Cebu_International_Airport.jpg" class="card-img" alt="공항 이동">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80" class="card-img" alt="공항 이동">
         <div class="info">
             <span class="badge flight">23:00</span>
             <h3>공항으로 이동</h3>
